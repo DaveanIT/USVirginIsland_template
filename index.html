@@ -579,7 +579,7 @@ hr {
 													<input type="checkbox" class="me-2">
 													<span class="expandable">Voted</span>
 													<input type="checkbox" class="me-2">
-													<span class="expandable" >Overwritten</span>
+													<span class="expandable" >Overwridden</span>
 												</div>
 												<div class="col">
 													<input type="checkbox" class="me-2">
@@ -753,7 +753,7 @@ hr {
 																	<input class="form-control row2btn" type="date" placeholder="End Date">
 																</div>
 																<div class="filter-inputs">
-																	<span class="filter-label row2btn">Date Overwritten</span>
+																	<span class="filter-label row2btn">Date Overwridden</span>
 																	<input class="form-control row2btn" type="date" placeholder="Start Date">
 																	<span class="filter-between row2btn">Between</span>
 																	<input class="form-control row2btn" type="date" placeholder="End Date">
@@ -921,9 +921,16 @@ hr {
 			});
 		});
 
-		$(document).ready(function(){
-  $('#hidefilter').click(function(){
-    $('#hd').toggle(); // This will toggle the visibility of elements with the .hd class
+		$(document).ready(function() {
+  $('#hidefilter').click(function() {
+    $('#hd').toggle(); // Toggles visibility of the element with the id 'hd'
+
+    // Update button text based on visibility
+    if ($('#hd').is(':visible')) {
+      $('#hidefilter').text('Hide Filter');
+    } else {
+      $('#hidefilter').text('Show Filter');
+    }
   });
 });
 
