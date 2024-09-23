@@ -16,3 +16,8 @@
 
 - **Enhanced UI** 
 
+# COMMIT 5
+
+- **Enhanced Responsiveness in Tablet Mode** 
+
+
