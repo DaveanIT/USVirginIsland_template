@@ -20,4 +20,9 @@
 
 - **Enhanced Responsiveness in Tablet Mode** 
 
+# COMMIT 6
+
+- **Enhanced Responsiveness in Tablet Potrait** 
+
+
 
