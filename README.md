@@ -24,5 +24,8 @@
 
 - **Enhanced Responsiveness in Tablet Potrait** 
 
+# COMMIT 7 
+
+- **Modifications in index page** 
 
 

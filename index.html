@@ -427,45 +427,44 @@ hr {
             margin-right: 5px;
         }
 		.status-bar {
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		align-items: center;
-		padding: 5px;
-		background-color: #f7f7f7;
-		border-radius: 5px;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    
+    align-items: center;
+    
 }
 
-.status-bar-item {
-  position: relative;
-  flex: 1;
-  text-align: center;
-  padding: 5px;
-  border-right: 1px solid #ddd;
-  font-size: 12px;
-  cursor: pointer;
+.status-item {
+    position: relative;
+    text-align: center;
 }
 
-.status-bar-item.active {
-  background-color: #4CAF50;
-  color: #fff;
+.status-item img {
+
+    height: auto;
+	width: 77px;
 }
 
-.status-bar-item.active::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  transform: translateY(-50%);
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-color: transparent transparent transparent #4CAF50;
+.status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px; /* Adjust text size to fit inside the image */
+    color: #fff; /* Make sure text is visible over the image */
+    /* font-weight: bold; */
+    pointer-events: none;
+}
+.status-text-inactive{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #1063bd;
+    /* font-weight: bold; */
+    pointer-events: none;
 }
 
-.status-bar-item:last-child {
-  border-right: none;
-}
 
 		.expandable{
 			font-size: 13px;
@@ -482,6 +481,9 @@ hr {
 	height: 600px; 
 	background: #ebf3ff; 
 	padding: 15px;
+}
+.intro{
+	margin-right: 150px;
 }
 
 /* For tablets in portrait (vertical) mode */
@@ -514,9 +516,23 @@ hr {
 
 /* For tablets in landscape (horizontal) mode */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.status-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .status-item {
+        margin-bottom: 20px;
+    }
     .sideflt{
     width: 70%;
     font-size: 9px;
+}
+.more{
+	    width: 755px;
+    height: 600px;
+    background: #ebf3ff;
+    padding: 15px;
 }
 .d-flex input {
     margin: 0; /* Ensure no additional margins on the inputs */
@@ -572,17 +588,11 @@ hr {
 				<div class="container mt-2">
 					<div class="search-bar-container" style="position: relative; z-index: 2;">
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle row2btn" type="button" id="dropdownMenuButton1"
-								data-bs-toggle="dropdown" aria-expanded="false">
-								Legislation
+							<button class="btn btn-secondary  row2btn" type="button" >
+								Legislature
 							</button>
-							<ul class="dropdown-menu row2btn" aria-labelledby="dropdownMenuButton1">
-								<li><a class="dropdown-item" href="#">Option 1</a></li>
-								<li><a class="dropdown-item" href="#">Option 2</a></li>
-								<li><a class="dropdown-item" href="#">Option 3</a></li>
-							</ul>
 						</div>
-						<input type="text" class="form-control row2btn" placeholder="Examples: 35">
+						<input type="text" class="form-control row2btn" placeholder="35">
 						<div class="dropdown">
 
 							<ul class="dropdown-menu row2btn" aria-labelledby="dropdownMenuButton2">
@@ -614,16 +624,10 @@ hr {
 
 									<form class="card more" style="">
 										<div class="row mb-2">
-											<div class="col">
-												<input type="checkbox" class="me-2">
-												<span class="expandable" >Act</span>
-												<input type="checkbox" class="me-2">
-												<span class="expandable">Resolution</span>
-											</div>
 											<div class="row mb-2 mt-2">
 												<select class="form-select expandable">
-													<option selected>Legislature</option>
-													<option >35 2021-2023</option>
+													<option >Legislature</option>
+													<option selected>35 2021-2023</option>
 												</select>
 											</div>
 											<div class="row mb-2">
@@ -634,6 +638,8 @@ hr {
 										<h6 class="expandable">Sponsor/Co-Sponsor</h6>
 										<div class="row mb-2">
 											<div class="col">
+												<input type="checkbox" class="me-2 expandable">
+												<span class="expandable">Primary Sponsor</span>
 												<input type="checkbox" class="me-2 expandable">
 												<span class="expandable">Sponsor</span>
 												<input type="checkbox" class="me-2 expandable">
@@ -649,113 +655,126 @@ hr {
 													<input type="text" class="form-control expandable" >
 												</div>
 												<div class="col">
-													<input type="text" class="form-control expandable" placeholder="Committee">
+													<select class="form-select expandable">
+														<option >Committee</option>
+													</select>
 												</div>
 											</div>
-											
-											<div class="row mb-2">
-												<div class="col">
+											<hr>
+											<div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+												<!-- Date Section -->
+												<div class="flex-column me-5" style="flex: 1;">
 													<h6 class="expandable">Date</h6>
+													
+													<!-- Approved, Voted, Overridden -->
+													<div class="d-flex justify-content-between mb-2">
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Approved</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Voted</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Overridden</span>
+														</div>
+													</div>
+											
+													<!-- Assigned, Introduced -->
+													<div class="d-flex justify-content-between mb-2">
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Assigned</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-1">
+															<span class="expandable intro">Introduced</span>
+														</div>
+													</div>
+											
+													<!-- To Senator, To Governor, To Lt. Governor -->
+													<div class="d-flex justify-content-between mb-2">
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">To Senator</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">To Governor</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">To Lt. Governor</span>
+														</div>
+													</div>
+													
+													<!-- Date Input (Start, Between, End) -->
+													<div class="filter-inputs mt-3">
+														<span class="filter-label row2btn">Date</span>
+														<input class="form-control row2btn expandable mb-2" type="date" placeholder="Start Date">
+														<span class="filter-between row2btn expandable">Between</span>
+														<input class="form-control row2btn expandable mb-2" type="date" placeholder="End Date">
+													</div>
 												</div>
-												<div class="col">
+											
+												<!-- Vertical Line -->
+												<div class="border-start d-none d-md-block" style="height: auto; margin-left: 10px; margin-right: 10px;"></div>
+											
+												<!-- Legislature Numbers Section -->
+												<div class="flex-column  mt-3 mt-md-0" style="flex: 1;">
 													<h6 class="expandable">Legislature Numbers</h6>
+											
+													<!-- Bill Number, Act Number, BR Number -->
+													<div class="d-flex justify-content-between mb-2">
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Bill Number</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Act Number</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">BR Number</span>
+														</div>
+													</div>
+											
+													<!-- Resolution No., Amendment No., Governor's No. -->
+													<div class="d-flex justify-content-between mb-2">
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Resolution No.</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Amendment No.</span>
+														</div>
+														<div>
+															<input type="checkbox" class="me-2">
+															<span class="expandable">Governor's No.</span>
+														</div>
+													</div>
+											
+													<!-- Text Input -->
+													<input type="text" class="form-control expandable mt-3" placeholder="Enter details...">
 												</div>
 											</div>
 											
-											<div class="row mb-2">
-												<div class="col">
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Approved</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Voted</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable" >Overwridden</span>
-												</div>
-												<div class="col">
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Bill Number</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Act Number</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable">BR Number</span>
-												</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col">
-													<div class="filter-inputs">
-														<span class="filter-label row2btn expandable">Date</span>
-		
-															<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
-															<span class="filter-between row2btn expandable">Between</span>
-															<input class="form-control row2btn expandable" type="date" placeholder="End Date">
-														</div>
-												</div>
+											<!-- Search Button Section -->
+											<div class="row mt-4">
 												<div class="col">
 													<div class="col">
-														<input type="text" class="form-control expandable" placeholder="">
+														<button type="reset" class="btn btn-secondary">Clear Filter</button>					
+														<button type="submit" class="btn btn-primary">Search</button>
+														<a class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">Close
+														<i class="fa fa-chevron-up"></i></a>
 													</div>
 												</div>
 											</div>
-											<div class="row mb-2">
-												<div class="col">
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Assigned</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Introduced</span>
-												</div>
-												<div class="col">
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Resolution No.</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable">Ammendment No.</span>
-													<input type="checkbox" class="me-2">
-													<span class="expandable" >Governors No.</span>
-												</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col">
-													<div class="filter-inputs">
-														<span class="filter-label row2btn expandable">Date</span>
-		
-															<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
-															<span class="filter-between row2btn expandable">Between</span>
-															<input class="form-control row2btn expandable" type="date" placeholder="End Date">
-														</div>
-												</div>
-												<div class="col">
-													<div class="col">
-														<input type="text" class="form-control expandable" placeholder="">
-													</div>
-												</div>
-											</div>
-											<div class="row mb-2"></div>
-												<div class="col">
-													<input type="checkbox" class="me-2 expandable">
-													<span class="expandable">To Senator</span>
-													<input type="checkbox" class="me-2 expandable">
-													<span class="expandable">To Governor</span>
-													<input type="checkbox" class="me-2 expandable">
-													<span class="expandable" >To Lt. Governor</span>
-												</div>
-												<div class="row mb-2">
-													<div class="col">
-														<div class="filter-inputs">
-															<span class="filter-label row2btn">Date</span>
-			
-																<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
-																<span class="filter-between row2btn expandable">Between</span>
-																<input class="form-control row2btn expandable" type="date" placeholder="End Date">
-															</div>
-													</div>
-													<div class="col">
-														<div class="col">
-															<button type="reset" class="btn btn-secondary">Clear Filter</button>					
-															<button type="submit" class="btn btn-primary">Search</button>
-															<a class="btn btn-secondary"  data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">Close
-															<i class="fa fa-chevron-up"></i></a>
-														</div>
-													</div>
-												</div>
+											
 									</form>
 								</div>
 							</div>
@@ -852,7 +871,7 @@ hr {
 																
 																<div class="row mb-3 align-items-center">
 																	<div class="col-md-4">
-																		<span class="filter-label">Overwritten On</span>
+																		<span class="filter-label">Overridden On</span>
 																	</div>
 																	<div class="col-md-8 d-flex justify-content-between">
 																		<input class="form-control sideflt" type="date" placeholder="Start Date">
@@ -930,6 +949,10 @@ hr {
 											<div class="card-body">
 												<!-- Sponsor and Co-Sponsor Checkboxes -->
 												<div class="mb-3">
+													<label class="checkbox-btn d-block"></label>
+														<input type="checkbox" class="me-2">
+														<span>Primary Sponsors</span>
+													</label>
 													<label class="checkbox-btn d-block">
 														<input type="checkbox" class="me-2">
 														<span>Sponsors</span>
@@ -944,9 +967,7 @@ hr {
 												<div class="mb-3">
 													<div class="container drp">
 														<div class="row">
-															<div class="col">
-																<label class="form-label">Sponsors</label>
-															</div>
+															
 															<div class="col">
 																<select class="form-select colmn" aria-label="Committee Filter">
 																	<option selected>Choose Sponsor</option>
@@ -957,9 +978,7 @@ hr {
 															</div>
 														</div>
 														<div class="row">
-															<div class="col">
-																<label class="form-label">Committee</label>
-															</div>
+														
 															<div class="col">
 																<select class="form-select colmn" aria-label="Committee Filter">
 																	<option selected>Choose Committee</option>
@@ -1013,17 +1032,42 @@ hr {
 				</div>
 				<div><span>Status:</span> </div>
 
-
-				<!-- <div class="status-bar">
-					<div class="status-bar-item active">Assigned</div>
-					<div class="status-bar-item active">Introduced</div>
-					<div class="status-bar-item">&nbsp;Senator &nbsp;&nbsp;</div>
-					<div class="status-bar-item">Committee</div>
-					<div class="status-bar-item">Floor</div>
-					<div class="status-bar-item">Approved</div>
-					<div class="status-bar-item">Lt. Governor</div>
-					<div class="status-bar-item">Governor</div>
-				</div>  -->
+				<div class="status-bar">
+					<div class="status-item">
+						<img src="img/Status Tracker_Active.svg" alt="Step 1" >
+						<span class="status-text">Assigned</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_Active.svg" alt="Step 2">
+						<span class="status-text">Introduced</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_Active.svg" alt="Step 3">
+						<span class="status-text">Senator</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_inactive.svg" alt="Step 4">
+						<span class="status-text-inactive">Committee</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_inactive.svg" alt="Step 4">
+						<span class="status-text-inactive">Floor</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_inactive.svg" alt="Step 4">
+						<span class="status-text-inactive">Approved</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_inactive.svg" alt="Step 4">
+						<span class="status-text-inactive">Lt.Governor</span>
+					</div>
+					<div class="status-item">
+						<img src="img/Status Tracker_inactive.svg" alt="Step 4">
+						<span class="status-text-inactive">Governor</span>
+					</div>
+				</div>
+				
+				
 			</div>
 		</div>
 		  </div>
