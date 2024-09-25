@@ -28,8 +28,12 @@
 
 - **Modifications in index page** 
 
-# COMMIT 7 
+# COMMIT 8 
 
 - **Created Member Search Page overall beautification** 
+
+# COMMIT 9
+
+- **Created Member Search Page overall beautification----FINAL** 
 
 
