@@ -28,4 +28,8 @@
 
 - **Modifications in index page** 
 
+# COMMIT 7 
+
+- **Created Member Search Page overall beautification** 
+
 

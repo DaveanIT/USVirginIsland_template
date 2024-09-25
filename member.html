@@ -12,7 +12,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>	
 
 	<style>
 		.form-select{
@@ -146,10 +146,16 @@
 			/* No bottom margin for alignment */
 		}
 
-		
+.memberphoto{
+    height: 300px;
+    width: 250px;
+}
 .card-header .title {
   margin-bottom: 0;
   line-height: 1.5;
+}
+#hd {
+  display: none; /* This hides the element by default */
 }
 
 .filter-group {
@@ -364,7 +370,34 @@ hr {
     border-radius: 8px;
     cursor: pointer;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
-	
+}
+.member-card {
+    width: 100%;
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-card-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.member-photo {
+    width: 100px;
+    height: 120px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.member-info p {
+    margin: 5px 0;
+}
+
+.member-info a {
+    text-decoration: none;
+    color: #007bff;
 }
 .bill-container {
             border: 1px solid #dcdcdc;
@@ -407,10 +440,6 @@ hr {
             display: flex;
             align-items: center;
         }
-		
-.status-text{
-	font-weight: normal;
-}
         .status {
             background-color: #21ba45;
             color: white;
@@ -461,7 +490,7 @@ hr {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 12px; /* Adjust text size to fit inside the image */
+    font-size: 11px; /* Adjust text size to fit inside the image */
     color: #fff; /* Make sure text is visible over the image */
     /* font-weight: bold; */
     pointer-events: none;
@@ -471,7 +500,7 @@ hr {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 12px;
+    font-size: 11px;
     color: #1063bd;
     /* font-weight: bold; */
     pointer-events: none;
@@ -485,10 +514,8 @@ hr {
 		.colmn{
 			width: 90%;
 		}
-		.sde{
+.sde{
     padding-left: 0rem;
-}.sde2{
-    /* padding-left: 0rem; */
 }
 .more{
 	width: 800px;
@@ -498,10 +525,6 @@ hr {
 }
 .intro{
 	margin-right: 150px;
-}
-.small-checkbox {
-    width: 15px;
-    height: 15px;
 }
 
 /* For tablets in portrait (vertical) mode */
@@ -544,6 +567,10 @@ hr {
     width: 70%;
     font-size: 9px;
 }
+    .sideflt{
+    width: 70%;
+    font-size: 9px;
+}
 .more{
 	    width: 755px;
     height: 600px;
@@ -568,7 +595,9 @@ hr {
 } */
 }
 
-
+.status-text{
+	font-weight: normal;
+}
 </style>
 </head>
 
@@ -589,14 +618,14 @@ hr {
 		<div class="container text-left"> <!-- Changed to text-left -->
 			<div class="row">
 				<div class="col-auto"> <!-- Changed to col-auto for fitting content -->
-					<button class="btn btn-outline-primary tabbtn">
-						Bill Tracking
-					</button>
+					<a href="index.html" class="btn btn-outline-secondary tabbtn" role="button">
+                        Bill Tracking
+                    </a>
 				</div>
 				<div class="col-auto"> <!-- Changed to col-auto for fitting content -->
-					<a href="member.html" class="btn btn-outline-secondary tabbtn">
+					<button class="btn btn-outline-primary tabbtn">
 						Member Search
-					</a>
+					</button>
 				</div>
 			</div>
 			<hr>
@@ -800,6 +829,23 @@ hr {
 
 				</div>
 			</div>
+			<div class="hide1">
+				<h6>Representative <b>Alma.S.Adams</b></h6>
+				<div class="member-card ">
+					<div class="member-card-body">
+						<img src="img/Alma_Adams_official_portrait.jpg" alt="Member Photo" class="member-photo">
+						<div class="member-info">
+							<p><strong>Party:</strong>example</p>
+							<p><strong>Island:</strong>example</p>
+							<p><strong>Email:</strong> example@example.com</p>
+							<p><strong>Telephone:</strong> +1234567890</p>
+							<p><strong>Website:</strong> <a href="https://example.com">example.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
 			<div class="container mt-4 hide1">
 				<div class="row">
 					<!-- Left Aligned Column for Filter and Pagination -->
@@ -837,183 +883,183 @@ hr {
 	</div>
 	<div class="container">
 		<div class="row">
-		  <div class="col-4" id="hd">
-			<div class="main">
-				<section class="section-content padding-y ">
-					<div class="container">
-			
-						<div class="row">
-							<!-- Sidebar for Filters with Toggle Features -->
-							<aside class="col-md-3"  style="width: 100%;">
-								<div class="card mt-4" style="width: 100%;">
-									<h6 class="title text-center"  style="width: 100%;">Limit your search</h6>
-								
-									<article class="filter-group">
-										<header class="card-header">
-											<a href="#" class="" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="false">
-												<i class="icon-control fa fa-chevron-down"></i>
-												<h6 class="title">Dates</h6>
-											</a>
-										</header>
-										<div class="filter-content collapse" id="collapse_1">
-											<div class="card-body">
-												<ul class="list-menu sde">
-													<!-- Date Approved -->
-													<li class="filter-item">
-														<div class="filter-stack">
-															<div class="filter-label-stack">
-													
-															
-															<div class="mb-3" style="font-size: 14px;">
-																<!-- Row 1 with 3 checkboxes -->
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class=" me-2" id="approved-on">
-																	<span>Approved On</span>
-																</label>
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="vetoed-on">
-																	<span>Vetoed On</span>
-																</label>
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="overridden-on">
-																	<span>Overridden On</span>
-																</label>
-															
-																<!-- Row 2 with 3 checkboxes -->
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="assigned-on">
-																	<span>Assigned On</span>
-																</label>
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="to-senator">
-																	<span>To Senator</span>
-																</label>
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="introduced-on">
-																	<span>Introduced On</span>
-																</label>
-															
-																<!-- Row 3 with 2 checkboxes -->
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="to-governor">
-																	<span>To Governor</span>
-																</label>
-																<label class="checkbox-btn d-block">
-																	<input type="checkbox" class="me-2" id="to-lt-governor">
-																	<span>To Lt. Governor</span>
-																</label>
-																
-																
-																<!-- Single Date Field at the end -->
-																
-															</div>
-															
-															
-																<!-- Single Date Field -->
-																
-															</div>
-															
-															
-															
-														</div>
-														
-													</li>
-												</ul>
-											</div>
+			<div class="col-4" id="hd">
+				<div class="main">
+					<section class="section-content padding-y ">
+						<div class="container">
+				
+							<div class="row">
+								<!-- Sidebar for Filters with Toggle Features -->
+								<aside class="col-md-3"  style="width: 100%;">
+									<div class="card mt-4" style="width: 100%;">
+										<h6 class="title text-center"  style="width: 100%;">Limit your search</h6>
+									
+										<article class="filter-group">
+											<header class="card-header">
+												<a href="#" class="" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="false">
+													<i class="icon-control fa fa-chevron-down"></i>
+													<h6 class="title">Dates</h6>
+												</a>
+											</header>
+											<div class="filter-content collapse" id="collapse_1">
 												<div class="card-body">
-													<ul class="list-menu sde2">
+													<ul class="list-menu sde">
 														<!-- Date Approved -->
 														<li class="filter-item">
-															<div class="filter-stack2">
+															<div class="filter-stack">
+																<div class="filter-label-stack">
+														
 																
-																<div class="filter-input-stack">
+																<div class="mb-3" style="font-size: 14px;">
+																	<!-- Row 1 with 3 checkboxes -->
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class=" me-2" id="approved-on">
+																		<span>Approved On</span>
+																	</label>
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="vetoed-on">
+																		<span>Vetoed On</span>
+																	</label>
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="overridden-on">
+																		<span>Overridden On</span>
+																	</label>
+																
+																	<!-- Row 2 with 3 checkboxes -->
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="assigned-on">
+																		<span>Assigned On</span>
+																	</label>
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="to-senator">
+																		<span>To Senator</span>
+																	</label>
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="introduced-on">
+																		<span>Introduced On</span>
+																	</label>
+																
+																	<!-- Row 3 with 2 checkboxes -->
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="to-governor">
+																		<span>To Governor</span>
+																	</label>
+																	<label class="checkbox-btn d-block">
+																		<input type="checkbox" class="me-2" id="to-lt-governor">
+																		<span>To Lt. Governor</span>
+																	</label>
 																	
 																	
-																	<div class="row mb-3 align-items-center">
-																		
-																		<div class="col-md-8 d-flex justify-content-between">
-																			<input class="form-control sideflt" type="date" placeholder="Start Date" data-has-listeners="true">
-																			<input class="form-control sideflt" type="date" placeholder="End Date" data-has-listeners="true">
-																		</div>
-																	</div>
+																	<!-- Single Date Field at the end -->
+																	
 																</div>
 																
+																
+																	<!-- Single Date Field -->
+																	
+																</div>
+																
+																
+																
 															</div>
+															
 														</li>
 													</ul>
-												</div>								
-										</div>
-									</article>
-								
-									<article class="filter-group">
-										<header class="card-header bg-light border-bottom">
-											<a href="#" class="d-flex justify-content-between align-items " data-bs-toggle="collapse" data-bs-target="#collapse_4" aria-expanded="false">
-												<h6 class="title">Sponsors</h6>
-												<i class="fa fa-chevron-down icon-control"></i>
-											</a>
-										</header>
-								
-										<div class="filter-content collapse" id="collapse_4">
-											<div class="card-body">
-												<!-- Sponsor and Co-Sponsor Checkboxes -->
-												<div class="mb-3" style="font-size: 14px;">
-													<label class="checkbox-btn d-block"></label>
-														<input type="checkbox" class="me-2">
-														<span>Primary Sponsors</span>
-													</label>
-													<label class="checkbox-btn d-block">
-														<input type="checkbox" class="me-2">
-														<span>Sponsors</span>
-													</label>
-													<label class="checkbox-btn d-block">
-														<input type="checkbox" class="me-2">
-														<span>Co-Sponsors</span>
-													</label>
 												</div>
-								
-												<!-- Dropdown Filters -->
-												<div class="mb-3">
-													<div class="container drp">
-														<div class="row">
-															
-															<div class="col sponsors">
-																<select class="form-select colmn" aria-label="Committee Filter">
-																	<option selected>Choose Sponsor</option>
-																	<option value="1">Sponsor 1</option>
-																	<option value="2">Sponsor 2</option>
-																	<option value="3">Sponsor 3</option>
-																</select>
-															</div>
-														</div>
-														<div class="row">
-														
-															<div class="col">
-																<select class="form-select colmn" aria-label="Committee Filter">
-																	<option selected>Choose Committee</option>
-																	<option value="1">Committee 1</option>
-																	<option value="2">Committee 2</option>
-																	<option value="3">Committee 3</option>
-																</select>
-															</div>
-														</div>
+													<div class="card-body">
+														<ul class="list-menu sde2">
+															<!-- Date Approved -->
+															<li class="filter-item">
+																<div class="filter-stack2">
+																	
+																	<div class="filter-input-stack">
+																		
+																		
+																		<div class="row mb-3 align-items-center">
+																			
+																			<div class="col-md-8 d-flex justify-content-between">
+																				<input class="form-control sideflt" type="date" placeholder="Start Date" data-has-listeners="true">
+																				<input class="form-control sideflt" type="date" placeholder="End Date" data-has-listeners="true">
+																			</div>
+																		</div>
+																	</div>
+																	
+																</div>
+															</li>
+														</ul>
+													</div>								
+											</div>
+										</article>
+									
+										<article class="filter-group">
+											<header class="card-header bg-light border-bottom">
+												<a href="#" class="d-flex justify-content-between align-items " data-bs-toggle="collapse" data-bs-target="#collapse_4" aria-expanded="false">
+													<h6 class="title">Sponsors</h6>
+													<i class="fa fa-chevron-down icon-control"></i>
+												</a>
+											</header>
+									
+											<div class="filter-content collapse" id="collapse_4">
+												<div class="card-body">
+													<!-- Sponsor and Co-Sponsor Checkboxes -->
+													<div class="mb-3" style="font-size: 14px;">
+														<label class="checkbox-btn d-block"></label>
+															<input type="checkbox" class="me-2">
+															<span>Primary Sponsors</span>
+														</label>
+														<label class="checkbox-btn d-block">
+															<input type="checkbox" class="me-2">
+															<span>Sponsors</span>
+														</label>
+														<label class="checkbox-btn d-block">
+															<input type="checkbox" class="me-2">
+															<span>Co-Sponsors</span>
+														</label>
 													</div>
-													<div class="filter-item">
+									
+													<!-- Dropdown Filters -->
+													<div class="mb-3">
+														<div class="container drp">
+															<div class="row">
+																
+																<div class="col sponsors">
+																	<select class="form-select colmn" aria-label="Committee Filter">
+																		<option selected>Choose Sponsor</option>
+																		<option value="1">Sponsor 1</option>
+																		<option value="2">Sponsor 2</option>
+																		<option value="3">Sponsor 3</option>
+																	</select>
+																</div>
+															</div>
+															<div class="row">
+															
+																<div class="col">
+																	<select class="form-select colmn" aria-label="Committee Filter">
+																		<option selected>Choose Committee</option>
+																		<option value="1">Committee 1</option>
+																		<option value="2">Committee 2</option>
+																		<option value="3">Committee 3</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="filter-item">
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-									</article>
-								</div>
+										</article>
+									</div>
+									
+								</aside>
+				
+								<!-- Main Content Area -->
 								
-							</aside>
-			
-							<!-- Main Content Area -->
-							
+							</div>
 						</div>
-					</div>
-				</section>
-			</div>
-		  </div>
+					</section>
+				</div>
+			  </div>
 		  <div class="col mt-4">
 			<div class="card hide1" style=" width: 100%; height: fit-content; background: #f5f8ff;">
 				<div class="card-body">
@@ -1092,7 +1138,6 @@ hr {
 		</div>
 		  </div>
 		</div>
-		</div>
 	  </div>
 	  </div>
 	<script>
@@ -1127,6 +1172,8 @@ $(document).ready(function() {
     }
   });
 });
+
+
 		</script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
