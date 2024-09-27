@@ -561,8 +561,8 @@ hr {
 }
 
 .colmn {
-    width: 45%;
-    font-size: 12px;
+    width: 80%;
+    font-size: 11px;
 }
 
 .sde {
@@ -589,7 +589,7 @@ hr {
 }
 
 .sideflt {
-    width: 50%;
+    width: 100%;
 }
 
 /* For tablets in portrait (vertical) mode */
