@@ -36,4 +36,7 @@
 
 - **Created Member Search Page overall beautification----FINAL** 
 
+# COMMIT 10
+
+- **Responsiveness** 
 

@@ -14,562 +14,7 @@
 		crossorigin="anonymous"></script>
 	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 
-	<style>
-		.form-select{
-			width: 50%;
-    		margin-left: 15px;
-		}
-		body {
-			margin-top: 20px;
-			font-family: 'Inter';
-			font-size: 12px;
-		}
-
-		.tabbtn, .row2btn{
-			font-size: 14px;
-		}
-		.navbar-custom {
-			background-color: #003f87;
-			/* Dark blue background */
-			position: relative;
-			height: 50px;
-			/* Adjust based on your preference */
-		}
-
-		.navbar-brand img {
-			width: 80px;
-			/* Adjust based on your logo size */
-			height: auto;
-			position: absolute;
-			top: 50%;
-			/* Center vertically */
-			transform: translateY(-50%);
-			margin-left: 20px;
-			/* Space from the left */
-		}
-
-		.navbar-text {
-			color: #ffffff;
-			/* White text */
-			font-size: 19px;
-			/* Larger text */
-			position: absolute;
-			left: 150px;
-			/* Space from the left */
-			top: 50%;
-			/* Center vertically */
-			transform: translateY(-50%);
-			white-space: nowrap;
-		}
-
-		.tabdiv .container {
-			padding-left: 0;
-			/* Remove default padding */
-		}
-
-		.tabdiv .row {
-			justify-content: start;
-			/* Align items to the start of the row */
-		}
-
-		.tabdiv .col {
-			padding-right: 10px;
-			/* Reduce spacing between buttons */
-		}
-
-		.tabdiv {
-			margin-top: 30px;
-		}
-
-.container{
-	padding-left: 0;
-	padding-right: 0;
-}
-		.search-bar-container {
-			padding: 10px;
-			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-			/* Light gray background */
-			border-radius: 5px;
-			/* Rounded corners */
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			width: 100%;
-			margin-left: 10px;
-			background-color: #ffffff;
-		}
-
-		.form-control {
-			margin-right: 5px;
-    		margin-left: 15px;
-			/* Space between elements */
-		}
-
-		.btn-outline-primary {
-			color: #fff;
-			/* White text color */
-			background-color: #007bff;
-			/* Bootstrap primary blue */
-			border-color: #007bff;
-			/* Border color same as background */
-		}
-
-		.dropdown-toggle::after {
-			margin-left: 10px;
-			/* Ensure spacing within dropdown */
-		}
-
-		.btn-primary {
-			background-color: #003f87;
-			/* New background color */
-			border-color: #4CAF50;
-			/* New border color */
-		}
-
-		.custom-flex-container {
-			display: flex;
-			align-items: center;
-			/* Vertically center the items */
-			margin-top: 16px;
-			/* 4rem top margin */
-		}
-
-		.custom-flex-container>.dropdown {
-			flex-shrink: 0;
-			/* Prevents the dropdown from shrinking */
-		}
-
-		.custom-flex-container>p {
-			margin-left: 16px;
-			/* Spacing between dropdown and paragraph */
-			margin-bottom: 0;
-			/* No bottom margin for alignment */
-		}
-
-		
-.card-header .title {
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-.filter-group {
-  border-bottom: 1px solid #e4e4e4;
-}
-.filter-group .card-header {
-  border-bottom: 0;
-}
-.filter-group:last-child {
-  border-bottom: 0;
-}
-
-.card-header .form-check {
-  margin-bottom: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.sponsors{
-	margin-bottom: 20px;
-}
-
-/* ================= lists ================= */
-[class*=list-] li:after {
-  visibility: hidden;
-  display: block;
-  content: "";
-  overflow: hidden;
-  height: 0;
-  clear: both;
-}
-.text-center {
-    padding: 10px;
-    text-align: center !important;
-    background-color: #003f87;
-    color: white;
-	width: 404px;
-}
-.list-icon {
-  list-style: none;
-  padding-left: 0;
-}
-.list-icon li {
-  margin-bottom: 7px;
-  position: relative;
-  padding-left: 30px;
-}
-.list-icon .icon {
-  width: 22px;
-  margin-right: 15px;
-  vertical-align: middle;
-  text-align: center;
-  color: #545454;
-  position: absolute;
-  top: 3px;
-  left: 0;
-}
-.list-icon span {
-  vertical-align: middle;
-}
-
-.list-bullet, .list-dots {
-  list-style: none;
-  padding-left: 0;
-}
-.list-bullet li, .list-dots li {
-  margin-bottom: 5px;
-  position: relative;
-  padding-left: 15px;
-}
-.list-bullet li::before, .list-dots li::before {
-  content: " ";
-  position: absolute;
-  top: 8px;
-  left: 0;
-  width: 7px;
-  border-radius: 100%;
-  height: 7px;
-  background: #ced4da;
-}
-.btn-outline-primary {
-    color: #fff;
-    background-color: #003f87;
-    border-color: #007bff;
-}
-.list-check {
-  padding-left: 0;
-  list-style: none;
-}
-.list-check > li {
-  position: relative;
-  padding-left: 24px;
-  margin-bottom: 7px;
-}
-.list-check > li::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 12px;
-  color: #00b517;
-  position: absolute;
-  top: 2px;
-  left: 0;
-  content: "";
-}
-
-.list-normal {
-  list-style: none;
-  padding-left: 0;
-}
-.list-normal li {
-  padding-left: 1em;
-  margin-bottom: 7px;
-}
-.list-normal li:before {
-  content: "•";
-  color: #3167eb;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-
-.list-menu {
-  list-style: none;
-  margin: 0;
-}
-.list-menu li {
-  margin-bottom: 5px;
-}
-.list-menu a {
-  color: #343a40;
-}
-.list-menu a:hover {
-  color: #3167eb;
-}
-
-.card-header a{
-	color: #3167eb;
-	text-decoration: none;
-}
-
-.icon-control {
-  margin-top: 5px;
-  float: right;
-  font-size: 80%;
-}
-/* Filter Stack Structure */
-.filter-stack {
-    display: flex;
-}
-.filter-label{
-	font-size: 14px;
-}
-
-.filter-label-stack {
-    display: flex;
-    flex-direction: column;
-    /*margin-right: 1rem;*/
-    flex-basis: 150px;
-}
-
-.filter-input-stack {
-    display: flex;
-    flex-direction: column;
-	/* margin-right: 5rem; */
-}
-
-.filter-inputs {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.filter-inputs input {
-    margin: 0 0.5rem;
-	font-size: 11px;
-    width: 99px;
-}
-
-.filter-between {
-    margin: 0 0.5rem;
-}
-.mb-3 {
-    margin-bottom: 1rem; /* Adjusts the spacing below each row */
-}
-
-.align-items-center {
-    align-items: center; /* Aligns labels and inputs vertically */
-}
-/* General Styling for consistency */
-.form-control {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-	width: 80%;
-	font-size: 12px;
-}
-
-.col-md-3{
-flex: 0 0 auto;
-width: 40%;
-}
-hr {
-    margin: 5px 0;
-    color: inherit;
-    border: 0;
-    border-top: var(--bs-border-width) solid;
-    opacity: .25;
-}
-.moreoption{
-    /* background-color: #cde1fd; */
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
-	
-}
-.bill-container {
-            border: 1px solid #dcdcdc;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .bill-label {
-            background-color: #fbbd08;
-            color: white;
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .bill-number {
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .bill-description {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .bill-details {
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .bill-details span {
-            font-weight: bold;
-        }
-        .download-link {
-            margin-right: 10px;
-        }
-        .status-container {
-            display: flex;
-            align-items: center;
-        }
-		
-.status-text{
-	font-weight: normal;
-}
-        .status {
-            background-color: #21ba45;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            margin-right: 10px;
-        }
-        .timeline {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 0;
-            margin-top: 10px;
-        }
-        .timeline-item {
-            font-size: 12px;
-            color: #2185d0;
-            text-align: center;
-            flex: 1;
-        }
-        .timeline-item:not(:last-child)::after {
-            content: '→';
-            color: #dcdcdc;
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-		.status-bar {
-    display: flex;
-    
-    align-items: center;
-    
-}
-
-.status-item {
-    position: relative;
-    text-align: center;
-}
-
-.status-item img {
-
-    height: auto;
-	width: 77px;
-}
-
-.status-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px; /* Adjust text size to fit inside the image */
-    color: #fff; /* Make sure text is visible over the image */
-    /* font-weight: bold; */
-    pointer-events: none;
-}
-.status-text-inactive{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
-    color: #1063bd;
-    /* font-weight: bold; */
-    pointer-events: none;
-}
-
-
-		.expandable{
-			font-size: 13px;
-		}
-
-		.colmn{
-			width: 90%;
-		}
-		.sde{
-    padding-left: 0rem;
-}.sde2{
-    padding-left: 0rem;
-}
-.more{
-	width: 800px;
-	height: 600px; 
-	background: #ebf3ff; 
-	padding: 15px;
-}
-.intro{
-	margin-right: 150px;
-}
-.small-checkbox {
-    width: 15px;
-    height: 15px;
-}
-
-/* For tablets in portrait (vertical) mode */
-@media only screen and   (orientation: portrait) {
-	.status-bar {
-        display: none; /* Hide the status bar on mobile and tablet */
-    }
-	 .row2btn {
-    font-size: 9px;
-}
-.card mt-4{
-	width: 280px;
-}
-.filter-label {
-    margin-bottom: 0;
-	font-size: 10px;
-}
-.navbar-text {
-	font-size: medium;
-}
-.sideflt{
-    width: 42%;
-    font-size: 9px;
-}
-.d-flex input {
-    margin: 0; /* Ensure no additional margins on the inputs */
-}
-.more{
-	width: 500px;
-	height: 700px;
-}
-}
-
-/* For tablets in landscape (horizontal) mode */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	.status-bar {
-        display: none; /* Hide the status bar on mobile and tablet */
-    }
-    .sideflt{
-    width: 70%;
-    font-size: 9px;
-}
-.more{
-	    width: 755px;
-    height: 600px;
-    background: #ebf3ff;
-    padding: 15px;
-}
-.d-flex input {
-    margin: 0; /* Ensure no additional margins on the inputs */
-	margin-right: 3px;
-}
-	 .row2btn {
-    font-size: 9px;
-}
-
-.filter-label {
-    margin-bottom: 0; /* Ensure label has no bottom margin */
-	font-size: 12px;
-}
-/* input.form-control {
-    width: 52%;
-    font-size: 9px;
-} */
-}
-
-
-</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -638,7 +83,7 @@ hr {
 								<div class="col"></div>
 								<div class="col">
 
-									<form class="card more" style="">
+									<form class="card more">
 										<div class="row mb-2">
 											<div class="row mb-2 mt-2">
 												<select class="form-select expandable">
@@ -664,139 +109,146 @@ hr {
 											<div class="col">
 												<span class="expandable">Committee</span>
 											</div>
-											</div>
+										</div>
 											
-											<div class="row mb-2">
+										<div class="row mb-2">
+											<div class="col">
+												<input type="text" class="form-control expandable" >
+											</div>
+											<div class="col">
+												<select class="form-select expandable">
+													<option >Committee</option>
+												</select>
+											</div>
+										</div>
+										<hr>
+										<div class="d-flex flex-column flex-md-row justify-content-between mb-2">
+											<!-- Date Section -->
+											<div class="flex-column  mt-3 mt-md-0" >
+												<h6 class="expandable">Date</h6>
+										
+												<!-- Bill Number, Act Number, BR Number -->
+												<div class="d-flex justify-content-between mb-2">
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 6px;">Approved</span>
+													</div>
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 6px;">
+															Voted</span>
+													</div>
+													<div class="mredt2">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 2px;">
+															Overridden</span>
+													</div>
+												</div>
+												<div class="d-flex justify-content-between mb-2">
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 6px;">Assigned</span>
+													</div>
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 6px;">
+															Introduced</span>
+													</div>
+													<div class="mredt2">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 2px;">
+															To Senator</span>
+													</div>
+												</div>
+												<div class="d-flex justify-content-between mb-2">
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 3px;">To Governor</span>
+													</div>
+													<div class="mredt">
+														<input type="checkbox" class="me-2">
+														<span class="expandable" style="margin-right: 3px;">
+															To Lt.Governor</span>
+													</div>
+													<div class="mredt2">
+														<input type="checkbox" class="me-2" style="visibility: hidden;">
+														<span class="expandable" style="margin-right: 2px; visibility: hidden;">
+															Overridden</span>
+													</div>
+												</div>
+												<div class="filter-inputs mt-3">
+													<span class="filter-label row2btn">Date</span>
+													<input class="form-control row2btn expandable mb-2" id="dateInput" type="date" placeholder="Start Date" data-has-listeners="true">
+													<span class="filter-label row2btn  ">Between</span>
+													<input class="form-control row2btn expandable mb-2" type="date" placeholder="End Date" data-has-listeners="true">
+												</div>
+											</div>
+											<div class="border-start d-none d-md-block" style="height: auto; margin-left: 10px; margin-right: 10px;"></div>
+
+											<div class="flex-column  mt-3 mt-md-0" style="flex: 1;">
+												<h6 class="expandable">Legislature Numbers</h6>
+										
+												<!-- Bill Number, Act Number, BR Number -->
+												<div class="d-flex justify-content-between mb-2">
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable">Bill Number</span>
+													</div>
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable" style="margin-right: 60px;">
+															Act Number</span>
+													</div>
+												</div>
+										
+												<!-- Resolution No., Amendment No., Governor's No. -->
+												<div class="d-flex justify-content-between mb-2">
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable">BR Number</span>
+													</div>
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable" style="
+														margin-right: 45px;">Resolution No.</span>
+													</div>
+												</div>
+												<div class="d-flex justify-content-between mb-2">
+												
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable">Amendment No.</span>
+													</div>
+													<div>
+														<input type="checkbox" class="me-2" data-has-listeners="true">
+														<span class="expandable" style="
+														margin-right: 41px;">Governor's No.</span>
+													</div>
+												</div>
+										
+												<!-- Text Input -->
+												<input type="text" class="form-control expandable mt-3" placeholder="Enter details..." data-has-listeners="true">
+											</div>
+								
+										</div>
+										<div class="row mt-4">
+											<div class="col">
 												<div class="col">
-													<input type="text" class="form-control expandable" >
-												</div>
-												<div class="col">
-													<select class="form-select expandable">
-														<option >Committee</option>
-													</select>
+													<button type="reset" class="btn btn-secondary">Clear Filter</button>					
+													<button type="submit" class="btn btn-primary">Search</button>
+													<a class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">Close
+													<i class="fa fa-chevron-up"></i></a>
 												</div>
 											</div>
-											<hr>
-											<div class="d-flex flex-column flex-md-row justify-content-between mb-2">
-												<!-- Date Section -->
-												<div class="flex-column me-5" style="flex: 1;">
-													<h6 class="expandable">Date</h6>
-													
-													<!-- Approved, Voted, Overridden -->
-													<div class="d-flex justify-content-between mb-2">
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Approved</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Voted</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Overridden</span>
-														</div>
-													</div>
-											
-													<!-- Assigned, Introduced -->
-													<div class="d-flex justify-content-between mb-2">
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Assigned</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-1">
-															<span class="expandable intro">Introduced</span>
-														</div>
-													</div>
-											
-													<!-- To Senator, To Governor, To Lt. Governor -->
-													<div class="d-flex justify-content-between mb-2">
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">To Senator</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">To Governor</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">To Lt. Governor</span>
-														</div>
-													</div>
-													
-													<!-- Date Input (Start, Between, End) -->
-													<div class="filter-inputs mt-3">
-														<span class="filter-label row2btn">Date</span>
-														<input class="form-control row2btn expandable mb-2" id="dateInput" type="date" placeholder="Start Date">
-														<span class="filter-between row2btn expandable">Between</span>
-														<input class="form-control row2btn expandable mb-2" type="date" placeholder="End Date">
-													</div>
-												</div>
-											
-												<!-- Vertical Line -->
-												<div class="border-start d-none d-md-block" style="height: auto; margin-left: 10px; margin-right: 10px;"></div>
-											
-												<!-- Legislature Numbers Section -->
-												<div class="flex-column  mt-3 mt-md-0" style="flex: 1;">
-													<h6 class="expandable">Legislature Numbers</h6>
-											
-													<!-- Bill Number, Act Number, BR Number -->
-													<div class="d-flex justify-content-between mb-2">
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Bill Number</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Act Number</span>
-														</div>
-													</div>
-											
-													<!-- Resolution No., Amendment No., Governor's No. -->
-													<div class="d-flex justify-content-between mb-2">
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">BR Number</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Resolution No.</span>
-														</div>
-													</div>
-														<div class="d-flex justify-content-between mb-2">
-													
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Amendment No.</span>
-														</div>
-														<div>
-															<input type="checkbox" class="me-2">
-															<span class="expandable">Governor's No.</span>
-														</div>
-													</div>
-											
-													<!-- Text Input -->
-													<input type="text" class="form-control expandable mt-3" placeholder="Enter details...">
-												</div>
-											</div>
-											
-											<!-- Search Button Section -->
-											<div class="row mt-4">
-												<div class="col">
-													<div class="col">
-														<button type="reset" class="btn btn-secondary">Clear Filter</button>					
-														<button type="submit" class="btn btn-primary">Search</button>
-														<a class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">Close
-														<i class="fa fa-chevron-up"></i></a>
-													</div>
-												</div>
-											</div>
-											
+										</div>
+										
 									</form>
+											
+											
 								</div>
-							</div>
+							</div>			
+						</div>
+					</div>
 						</div>
 					
 					</div>
@@ -834,7 +286,7 @@ hr {
 						</div>
 					</div>
 				</div>
-				<hr>
+				<hr class="line">
 			</div>
 		</div>
 	</div>
@@ -859,7 +311,7 @@ hr {
 											</a>
 										</header>
 										<div class="filter-content collapse" id="collapse_1">
-											<div class="card-body">
+											<div class="card-body sidecheck">
 												<ul class="list-menu sde">
 													<!-- Date Approved -->
 													<li class="filter-item">
@@ -923,26 +375,28 @@ hr {
 													</li>
 												</ul>
 											</div>
-												<div class="card-body">
+											<hr class="line">
+												<div class="card-body sidedate">
 													<ul class="list-menu sde2">
 														<!-- Date Approved -->
-														<li class="filter-item">
-															<div class="filter-stack2">
+														<div class="filter-item">
+															<div class="filter-stack2 d-flex flex-column">
+															  
+															  <div class="filter-input-stack">
 																
-																<div class="filter-input-stack">
-																	
-																	
-																	<div class="row mb-3 align-items-center">
-																		
-																		<div class="col-md-8  justify-content-between">
-																			<input class="form-control sideflt" type="date" placeholder="Start Date" data-has-listeners="true"> <br>
-																			<input class="form-control sideflt" type="date" placeholder="End Date" data-has-listeners="true">
-																		</div>
-																	</div>
+																<div class="d-flex align-items-center">
+																  
+																  <div class="d-flex flex-column col-md-8 justify-content-between">
+																	<input class="form-control sideflt mb-2" type="date" placeholder="Start Date" data-has-listeners="true">
+																	<input class="form-control sideflt" type="date" placeholder="End Date" data-has-listeners="true">
+																  </div>
+																  
 																</div>
-																
+															  </div>
+															  
 															</div>
-														</li>
+														  </div>
+														  
 													</ul>
 												</div>								
 										</div>
@@ -978,7 +432,7 @@ hr {
 												<div class="mb-3">
 													<div class="container drp">
 														<div class="row">
-															
+															<hr>
 															<div class="col sponsors">
 																<select class="form-select colmn" aria-label="Committee Filter">
 																	<option selected>Choose Sponsor</option>
@@ -990,7 +444,7 @@ hr {
 														</div>
 														<div class="row">
 														
-															<div class="col">
+															<div class="col commtte">
 																<select class="form-select colmn" aria-label="Committee Filter">
 																	<option selected>Choose Committee</option>
 																	<option value="1">Committee 1</option>
@@ -1049,13 +503,13 @@ hr {
 					align-items: center;    /* Align items vertically in the center */
 					gap: 8px;              /* Space between each div */
 					font-size: 13px;">
-						<div><span>Date Vetoed:</span> </div>
-						<div><span>Date Overridden:</span> </div>
-						<div><span>Date Approved:</span> </div>
+						<div><span>Date Vetoed:</span>mm-dd-yyyy</div>
+						<div><span>Date Overridden:</span>mm-dd-yyyy</div>
+						<div><span>Date Approved:</span>mm-dd-yyyy</div>
 				</div>
-				<div><span>Status:</span> </div>
 
 				<div class="status-bar">
+					<div><span>Status:</span> </div>
 					<div class="status-item">
 						<img src="img/Status Tracker_Active.svg" alt="Step 1" >
 						<span class="status-text" style="font-weight: normal;">Assigned</span>

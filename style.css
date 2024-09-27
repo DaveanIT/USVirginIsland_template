@@ -1,0 +1,707 @@
+.memberphoto {
+    height: 300px;
+    width: 250px;
+}
+
+.member-card {
+    width: 100%;
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-card-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.member-photo {
+    width: 100px;
+    height: 120px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.member-info p {
+    margin: 5px 0;
+}
+
+.member-info a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.form-select {
+    width: 50%;
+    margin-left: 15px;
+}
+
+body {
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-size: 12px;
+}
+
+.tabbtn,
+.row2btn {
+    font-size: 14px;
+}
+
+.navbar-custom {
+    background-color: #003f87;
+    /* Dark blue background */
+    position: relative;
+    height: 50px;
+    /* Adjust based on your preference */
+}
+
+.navbar-brand img {
+    width: 80px;
+    /* Adjust based on your logo size */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    margin-left: 20px;
+    /* Space from the left */
+}
+
+.navbar-text {
+    color: #ffffff;
+    /* White text */
+    font-size: 19px;
+    /* Larger text */
+    position: absolute;
+    left: 150px;
+    /* Space from the left */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.tabdiv .container {
+    padding-left: 0;
+    /* Remove default padding */
+}
+
+.tabdiv .row {
+    justify-content: start;
+    /* Align items to the start of the row */
+}
+
+.tabdiv .col {
+    padding-right: 10px;
+    /* Reduce spacing between buttons */
+}
+
+.tabdiv {
+    margin-top: 30px;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.search-bar-container {
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* Light gray background */
+    border-radius: 5px;
+    /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+
+.form-control {
+    margin-right: 5px;
+    margin-left: 15px;
+    /* Space between elements */
+}
+
+.btn-outline-primary {
+    color: #fff;
+    /* White text color */
+    background-color: #007bff;
+    /* Bootstrap primary blue */
+    border-color: #007bff;
+    /* Border color same as background */
+}
+
+.dropdown-toggle::after {
+    margin-left: 10px;
+    /* Ensure spacing within dropdown */
+}
+
+.btn-primary {
+    background-color: #003f87;
+    /* New background color */
+    border-color: #4CAF50;
+    /* New border color */
+}
+
+.custom-flex-container {
+    display: flex;
+    align-items: center;
+    /* Vertically center the items */
+    margin-top: 16px;
+    /* 4rem top margin */
+}
+
+.custom-flex-container>.dropdown {
+    flex-shrink: 0;
+    /* Prevents the dropdown from shrinking */
+}
+
+.custom-flex-container>p {
+    margin-left: 16px;
+    /* Spacing between dropdown and paragraph */
+    margin-bottom: 0;
+    /* No bottom margin for alignment */
+}
+
+.sidecheck {
+    padding-bottom: 0px;
+}
+
+.sidedate {
+    padding-top: 2px;
+    padding-left: 0px;
+}
+
+.card-header .title {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.filter-group {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.filter-group .card-header {
+    border-bottom: 0;
+}
+
+.filter-group:last-child {
+    border-bottom: 0;
+}
+
+.card-header .form-check {
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sponsors {
+    margin-bottom: 8px;
+    padding-left: 0px;
+}
+
+.commtte {
+    padding-left: 0px;
+}
+
+/* ================= lists ================= */
+[class*=list-] li:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    overflow: hidden;
+    height: 0;
+    clear: both;
+}
+
+.text-center {
+    padding: 10px;
+    text-align: center !important;
+    background-color: #003f87;
+    color: white;
+    width: 404px;
+}
+
+.list-icon {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-icon li {
+    margin-bottom: 7px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.list-icon .icon {
+    width: 22px;
+    margin-right: 15px;
+    vertical-align: middle;
+    text-align: center;
+    color: #545454;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.list-icon span {
+    vertical-align: middle;
+}
+
+.list-bullet,
+.list-dots {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-bullet li,
+.list-dots li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.list-bullet li::before,
+.list-dots li::before {
+    content: " ";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 7px;
+    border-radius: 100%;
+    height: 7px;
+    background: #ced4da;
+}
+
+.btn-outline-primary {
+    color: #fff;
+    background-color: #003f87;
+    border-color: #007bff;
+}
+
+.list-check {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-check>li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 7px;
+}
+
+.list-check>li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    color: #00b517;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+}
+
+.list-normal {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-normal li {
+    padding-left: 1em;
+    margin-bottom: 7px;
+}
+
+.list-normal li:before {
+    content: "•";
+    color: #3167eb;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.list-menu {
+    list-style: none;
+    margin: 0;
+}
+
+.list-menu li {
+    margin-bottom: 5px;
+}
+
+.list-menu a {
+    color: #343a40;
+}
+
+.list-menu a:hover {
+    color: #3167eb;
+}
+
+.card-header a {
+    color: #3167eb;
+    text-decoration: none;
+}
+
+.icon-control {
+    margin-top: 5px;
+    float: right;
+    font-size: 80%;
+}
+
+/* Filter Stack Structure */
+.filter-stack {
+    display: flex;
+}
+
+.filter-label {
+    font-size: 14px;
+}
+
+.filter-label-stack {
+    display: flex;
+    flex-direction: column;
+    /*margin-right: 1rem;*/
+    flex-basis: 150px;
+}
+
+.filter-input-stack {
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 5rem; */
+}
+
+.filter-inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filter-inputs input {
+    margin: 0 0.5rem;
+    font-size: 11px;
+    width: 99px;
+}
+
+.filter-between {
+    margin: 0 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+    /* Adjusts the spacing below each row */
+}
+
+.align-items-center {
+    align-items: center;
+    /* Aligns labels and inputs vertically */
+}
+
+/* General Styling for consistency */
+.form-control {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 80%;
+    font-size: 12px;
+}
+
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 40%;
+}
+
+hr {
+    margin: 5px 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}
+
+.moreoption {
+    /* background-color: #cde1fd; */
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+}
+
+.bill-container {
+    border: 1px solid #dcdcdc;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bill-label {
+    background-color: #fbbd08;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.bill-number {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bill-description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.bill-details {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.bill-details span {
+    font-weight: bold;
+}
+
+.download-link {
+    margin-right: 10px;
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+}
+
+.status-text {
+    font-weight: normal;
+}
+
+.status {
+    background-color: #21ba45;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.timeline-item {
+    font-size: 12px;
+    color: #2185d0;
+    text-align: center;
+    flex: 1;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '→';
+    color: #dcdcdc;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.status-bar {
+    display: flex;
+
+    align-items: center;
+
+}
+
+.status-item {
+    position: relative;
+    text-align: center;
+}
+
+.status-item img {
+
+    height: auto;
+    width: 77px;
+}
+
+.status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    /* Adjust text size to fit inside the image */
+    color: #fff;
+    /* Make sure text is visible over the image */
+    /* font-weight: bold; */
+    pointer-events: none;
+}
+
+.status-text-inactive {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #1063bd;
+    /* font-weight: bold; */
+    pointer-events: none;
+}
+
+
+.expandable {
+    font-size: 13px;
+}
+
+.colmn {
+    width: 45%;
+    font-size: 12px;
+}
+
+.sde {
+    padding-left: 0rem;
+}
+
+.sde2 {
+    padding-left: 0rem;
+}
+
+.more {
+    width: 800px;
+    height: fit-content;
+    background: #ebf3ff;
+    padding: 15px;
+    margin-right: 150px;
+}
+
+.intro {}
+
+.small-checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.sideflt {
+    width: 50%;
+}
+
+/* For tablets in portrait (vertical) mode */
+@media only screen and (orientation: portrait) {
+
+    .sidedate {
+        padding-top: 0px;
+        padding-left: 15px;
+    }
+
+    .sideflt {
+        width: 85%;
+        font-size: 9px;
+    }
+
+    .status-bar {
+        display: none;
+        /* Hide the status bar on mobile and tablet */
+    }
+
+    .row2btn {
+        font-size: 9px;
+    }
+
+    .card mt-4 {
+        width: 280px;
+    }
+
+    .filter-label {
+        margin-bottom: 0;
+        font-size: 10px;
+    }
+
+    .navbar-text {
+        font-size: medium;
+    }
+
+    .sideflt {
+        width: 42%;
+        font-size: 9px;
+    }
+
+    .d-flex input {
+        margin: 0;
+        /* Ensure no additional margins on the inputs */
+    }
+
+    .more {
+        width: 500px;
+        height: fit-content;
+
+    }
+}
+
+/* For tablets in landscape (horizontal) mode */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .sidedate {
+        padding-left: 15px;
+    }
+
+    .status-bar {
+        display: none;
+        /* Hide the status bar on mobile and tablet */
+    }
+
+    .sideflt {
+        width: 70%;
+        font-size: 9px;
+    }
+
+    .colmn {
+        width: 70%;
+        font-size: 10px;
+    }
+
+    .more {
+        width: 745px;
+        height: fit-content;
+        background: #ebf3ff;
+        padding: 15px;
+    }
+
+    .d-flex input {
+        margin: 0;
+        /* Ensure no additional margins on the inputs */
+        margin-right: 3px;
+    }
+
+    .row2btn {
+        font-size: 9px;
+    }
+
+    .filter-label {
+        margin-bottom: 0;
+        /* Ensure label has no bottom margin */
+        font-size: 12px;
+    }
+
+    /* input.form-control {
+width: 52%;
+font-size: 9px;
+} */
+}
+
+.mredt {
+    width: 125px;
+}
+
+.mredt2 {
+    width: 115px;
+}
+
+.line {
+    color: #979797;
+}
